@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #news {
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h3 {
+            color: #4CAF50; /* Green heading */
+        }
+        p {
+            color: #666; /* Dark gray text */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+      <div class="loading-screen">
+        <div class="sun">
+          <img src="sun.png" alt="Rotating Sun" style="position: relative;">
+
+
+    </div>
+        </div>
+    <div id="news"></div>
+    <script>
+      apikey = '7b1fe3d459ce786641bb5ebf3b17378d';
+      category = 'general';
+      url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&lang=en&country=us&max=10&apikey=' + apikey;
+
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          articles = data.articles;
+          let newsContent = '';
+          for (i = 0; i < articles.length; i++) {
+            newsContent += '<h3>' + articles[i]['title'] + '</h3>';
+            newsContent += '<p>' + articles[i]['description'] + '</p>';
+            newsContent += '<a href="' + articles[i]['url'] + '">Read more</a>';
+          }
+          document.getElementById('news').innerHTML = newsContent;
+        });
+fetch(url)
+  .then(function (response) {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('expand'); // Add expand animation
+
+    // After articles are fetched and loaded, hide the loading screen
+    response.json().then(function(data) {
+      setTimeout(() => {
+        loadingScreen.style.display = 'none'; // Hide using display property
+      }, 1000); // Adjust delay based on animation duration (2s for expansion + desired hiding delay)
+    });
+  });
+
+    </script>
+
+</body>
+</html>

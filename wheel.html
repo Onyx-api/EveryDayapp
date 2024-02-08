@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Wheel of Names</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f1b5; /* Yellow background color */
+      text-align: center;
+    }
+
+    .container {
+      margin: 50px auto;
+      position: relative;
+      max-width: 400px; /* Example: Adjust the width of the container */
+    }
+
+    .names {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Align the items vertically */
+    }
+
+    input[type="text"] {
+      padding: 10px; /* Example: Adjust the input field padding */
+      margin-bottom: 10px; /* Example: Add some spacing between input and button */
+    }
+
+    button {
+      padding: 10px 20px; /* Example: Adjust the button padding */
+      background-color: #4CAF50; /* Green background color */
+      color: white;
+      border: none;
+      cursor: "sun.png";
+
+    }
+
+    button:hover {
+      background-color: #45a049; /* Darker green background color on hover */
+    }
+
+    ul {
+      list-style-type: none; /* Remove the bullet points */
+      padding: 0;
+    }
+
+    .result-box {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #000000;
+    }
+
+    .okay-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50; /* Green background color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="location.href='index.html'" id="myButton121">Go Home</button>
+  <div class="container">
+    <button onclick="clearNames()">Clear</button>
+    <div class="names">
+      <input type="text" id="newName" placeholder="Enter name" onkeydown="if(event.keyCode==13){addName()}">
+      <button onclick="addName()">Add</button>
+    <button onclick="pickRandomName()">Pick a Name</button>
+      <ul id="nameList">
+        <!-- Names will be dynamically added here -->
+      </ul>
+    </div>
+
+    <div class="result-box" id="resultBox">
+      <p id="resultText"></p>
+      <button class="okay-button" onclick="hideResultBox()">OK</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    
+
+    function addName() {
+      const newName = document.getElementById('newName').value;
+      const nameList = document.getElementById('nameList');
+      const newListItem = document.createElement('li');
+      newListItem.textContent = newName;
+      nameList.appendChild(newListItem);
+      document.getElementById('newName').value = ""; // Clear the text box after adding the name
+    }
+
+    function pickRandomName() {
+      const nameList = document.getElementById('nameList');
+      const names = nameList.getElementsByTagName('li');
+      const randomIndex = Math.floor(Math.random() * names.length);
+      document.getElementById('resultBox').style.display = 'block';
+      document.getElementById('resultText').textContent = "The randomly picked name is: " + names[randomIndex].textContent;
+    }
+
+    function hideResultBox() {
+      document.getElementById('resultBox').style.display = 'none';
+    }
+
+    function clearNames() {
+      const nameList = document.getElementById('nameList');
+      nameList.innerHTML = "";
+    }
+  </script>
+</body>
+
+</html>

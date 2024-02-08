@@ -1,0 +1,355 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+}
+
+#file-upload {
+    margin-bottom: 10px;
+}
+
+#create-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#button-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background: #f4e862;
+  text-align: center;
+}
+
+.container {
+  margin: 50px auto;
+  position: relative;
+  background: linear-gradient(to bottom, #ffef3d, #f4f4b8);
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #444;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+button {
+  background: #f4f4b8;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #444;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #fffde7;
+}
+
+button:active {
+  background: #e5e59e;
+  transform: scale(0.98);
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+  background: linear-gradient(to right, #f4f4b8, #bc5a45);
+}
+
+.pick-button {
+  background: linear-gradient(to right, #f4f4b8, #35495e);
+}
+
+
+.circular-button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin-left: 50%;
+}
+
+.circular-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.circular-button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.circular-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+body {
+    background-color: #f3f1b5; /* Yellow background color */
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 50px auto;
+}
+
+.coin-container {
+    margin-top: -150px ;
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+}
+
+.coin-container img {
+    position: absolute;
+    top: 190%;
+    left: 190%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.heads {
+    display: block;
+}
+
+.tails {
+    display: block;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Add this code to the existing style.css file */
+.body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f1b5;
+  text-align: center;
+}
+
+.container {
+  margin: 50px auto;
+  position: relative;
+  background-color: #fff; /* Add a background color that fits the rest */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.names {
+  margin-top: 20px;
+}
+.result-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f3f1b5;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.okay-button {
+  background-color: #f3f1b5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+@keyframes rotate { /* Define the rotation animation */
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes expand {
+  from { transform: scale(1); background-color: ##ffdf6b; }
+  to { transform: scale(50); background-color: #f3f1b5; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.sun {
+  animation: fade-out 1s ease-in-out;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffdf6b; /* Adjust initial background color if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.sun {
+  width: 100px; /* Adjust sun size as desired */
+  height: 100px;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.sun img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.loading-screen.expand {
+  animation: expand 1s ease-in-out;
+}
+
+.loading-screen.fade-out {
+  animation: fade-out 1s ease-in-out;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffde7; /* Light yellow background */
+  text-align: center;
+}
+
+body {
+  font-family: 'Lato', sans-serif; /* Slightly bolder font */
+  background: #fffde7; /* Light yellow background */
+  text-align: center;
+}
+
+.container {
+  margin: 50px auto;
+  position: relative;
+  background: linear-gradient(to bottom, #fffde7, #f4f4b8); /* Gradient background */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+.canvas {
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #f4f4b8; /* Yellow border */
+}
+
+.names {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fffde7; /* Match body background */
+}
+
+input[type="text"],
+button {
+  background: #f4f4b8; /* Yellow background */
+  border: none;
+  border-radius: 10px; /* More rounded buttons */
+  padding: 15px 20px; /* Increased padding */
+  color: #444; /* Darker text */
+  font-weight: bold; /* Bolder text */
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); /* Subtle text shadow */
+  margin-right: 10px;
+  cursor: pointer; /* Indicate interactivity */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition */
+}
+
+button:hover {
+  background: #fffde7; /* Lighten background on hover */
+}
+
+button:active {
+  background: #e5e59e; /* Darken background on click */
+  transform: scale(0.98); /* Shrink slightly on click */
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle inner shadow */
+}
+
+
+button:first-of-type {
+  background: linear-gradient(to right, #f4f4b8, #bc5a45); /* Gradient add button */
+}
+
+button:last-of-type {
+  background: linear-gradient(to right, #8d13ae, #17ba89); /* Gradient pick button */
+  color: black;
+  text-shadow: none;
+  width: 90%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  color: #444;
+}
+#username-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.username-i{
+ margin-left: 43%;
+}
+name-input{
+ color: red;
+    
+}

@@ -1,0 +1,84 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<h1> Random Number Generator</h1>
+<head>
+
+</head>
+<body>
+  <button onclick="location.href='index.html'"
+     <p> <b>Go Home</b></p>
+
+  </button>
+  <hr> </hr>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+        #minRangeValue, #maxRangeValue {
+            text-align: center;
+        }
+  </style>
+</head>
+<body>
+  <input type="range" min="0" max="500" value="0" class="slider" id="minRange">
+    <p id="minRangeValue">0</p>
+  <input type="range" min="0" max="500" value="500" class="slider" id="maxRange">
+    <p id="maxRangeValue">500</p>
+  <button onclick="generateRandomNumber()">Generate Random Number</button>
+  <p id="randomNumber"></p>
+  <script>
+    function generateRandomNumber() {
+      var min = document.getElementById("minRange").value;
+      var max = document.getElementById("maxRange").value;
+      var randomNumber = Math.floor(Math.random() * (max - min + 1)) + parseInt(min);
+      document.getElementById("randomNumber").innerHTML = "Random Number: " + randomNumber;
+    }
+        document.getElementById("minRange").oninput = function() {
+            document.getElementById("minRangeValue").innerHTML = "Min: " + this.value;
+        }
+        document.getElementById("maxRange").oninput = function() {
+            document.getElementById("maxRangeValue").innerHTML = "Max: " + this.value;
+        }
+  </script>
+</body>
+</html>
+
+</html>

@@ -1,0 +1,108 @@
+<style>
+    body {
+        background-color: #f4e862;
+        ;
+    }
+</style>
+<h1>Dice Roller</h1>
+<hr> Here to: </hr>
+<button onclick="location.href='index.html'" id="myButton121">Go Home</button>
+
+</button>
+<hr>
+</hr>
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f1b5;
+            /* Yellow background color */
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+        }
+
+        .dice {
+            width: 200px;
+            /* Adjust width as needed */
+            height: 200px;
+            /* Adjust height as needed */
+          
+            /* Adjust border size and color as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dice" id="dice"></div>
+
+        <button onclick="rollDice()">Roll Dice</button>
+
+    </div>
+    <script>
+        function rollDice() {
+            var randomNumber = Math.floor((Math.random() * 6) + 1);
+
+            if (randomNumber == 1) {
+              
+
+                document.getElementById("dice").innerHTML = '<img src="dice1.png">';
+           }
+            if (randomNumber == 2) {
+              document.getElementById("dice").innerHTML = '<img src= "dice2.png">';
+            }
+            if (randomNumber == 3) {
+            document.getElementById("dice").innerHTML = '<img src= "dice3.png">';
+            }
+            if (randomNumber == 4) {
+            document.getElementById("dice").innerHTML = '<img src= "dice4.png">';
+            }
+            if (randomNumber == 5) {
+            document.getElementById("dice").innerHTML = '<img src= "dice5.png">';
+            }
+          if (randomNumber == 6) {
+          document.getElementById("dice").innerHTML = '<img src= "dice6.png">';
+          }
+                
+                
+                }
+  
+    </script>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dice Roller</title>
+    </head>
+
+    <body>
+        <style>
+            backdrop {
+                background-color: #f3f1b5 outline: grey
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </body>
+
+    </html>

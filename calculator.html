@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+body {
+  background-color: #fffde7; /* Light yellow background */
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  background-color: #fff9c4; /* Lighter yellow for calculator area */
+  border-radius: 10px; /* Soft rounded corners */
+  width: 220px;
+  margin: 0 auto; /* Centers the calculator */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+.button {
+  padding: 10px;
+  background-color: #fffde7; /* Buttons match background */
+  border: 1px solid #f5e9a0; /* Warmer yellow border */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.button:hover {
+  background-color: #fff9c4; /* Lighter yellow on hover */
+}
+
+#result {
+  border: 1px solid #f5e9a0; /* Warmer yellow border */
+  padding: 10px;
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+    body {
+        background-color: #fffde7; /* Light yellow background */
+        text-align: center; /* Center align text */
+    }
+
+    .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        padding: 10px;
+        background-color: #fff9c4; /* Lighter yellow for calculator area */
+        border-radius: 10px; /* Soft rounded corners */
+        width: 220px;
+        margin: 0 auto; /* Centers the calculator */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    }
+
+    .button {
+        padding: 10px;
+        background-color: #fffde7; /* Buttons match background */
+        border: 1px solid #f5e9a0; /* Warmer yellow border */
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.2s ease; /* Smooth hover effect */
+    }
+
+    .button:hover {
+        background-color: #fff9c4; /* Lighter yellow on hover */
+    } /*Made some changes to the heads or tails to make it more obvious what it is- Sumeet*/
+
+    #result {
+        border: 1px solid #f5e9a0; /* Warmer yellow border */
+        padding: 10px;
+        margin-top: 10px;
+        text-align: right;
+        font-weight: bold;
+    }
+
+
+
+</style>
+</head>
+
+
+
+
+<body>
+    <link rel="stylesheet" type="text/css" href="style.css">
+      <button onclick="location.href='index.html'" class="button" id="myButton121">Go Home</button>
+    <div class="calculator">
+        <div class="button" onclick="addToScreen(7)">7</div>
+        <div class="button" onclick="addToScreen(8)">8</div>
+        <div class="button" onclick="addToScreen(9)">9</div>
+        <div class="button" onclick="addToScreen('/')">/</div>
+        <div class="button" onclick="addToScreen(4)">4</div>
+        <div class="button" onclick="addToScreen(5)">5</div>
+        <div class="button" onclick="addToScreen(6)">6</div>
+        <div class="button" onclick="addToScreen('*')">*</div>
+        <div class="button" onclick="addToScreen(1)">1</div>
+        <div class="button" onclick="addToScreen(2)">2</div>
+        <div class="button" onclick="addToScreen(3)">3</div>
+        <div class="button" onclick="addToScreen('-')">-</div>
+        <div class="button" onclick="clearScreen()">AC</div>
+        <div class="button" onclick="addToScreen(0)">0</div>
+        <div class="button" onclick="calculate()">=</div>
+        <div class="button" onclick="addToScreen('+')">+</div>
+    </div>
+    <div id="result" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px; text-align: right;"></div>
+
+    <script>
+        function addToScreen(value) {
+            document.getElementById('result').innerText += value;
+        }
+
+        function clearScreen() {
+            document.getElementById('result').innerText = '';
+        }
+
+        function calculate() {
+            const result = document.getElementById('result').innerText;
+            document.getElementById('result').innerText = eval(result);
+        }
+    </script>
+</body>
+    </html>
