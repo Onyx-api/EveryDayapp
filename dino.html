@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dino Run</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <script>const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  // Game variables
+  let dino = {
+    x: 50,
+    y: 150,
+    width: 32,
+    height: 48,
+    jumping: false,
+    jumpHeight: 50,
+    gravity: 5,
+    jumpVelocity: 0,
+    sprites: {
+      // Replace with your sprite objects or paths
+      running: {
+        // Define frames and properties for running animation
+      },
+      jumping: {
+        // Define frames and properties for jumping animation
+      },
+      idle: {
+        // Define frame and properties for idle state
+      },
+    },
+    currentSprite: "running",
+  };
+
+  let obstacles = [];
+  let score = 0;
+  let gameSpeed = 2;
+
+  // Draw functions
+  function drawDino() {
+    // Replace with code to draw your dino sprite based on current state
+    const sprite = dino.sprites[dino.currentSprite];
+    ctx.drawImage(sprite.image, sprite.frame * sprite.width, 0, sprite.width, sprite.height, dino.x, dino.y, dino.width, dino.height);
+  }
+
+  function drawObstacles() {
+    for (const obstacle of obstacles) {
+      ctx.fillStyle = 'brown';
+      ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+    }
+  }
+
+  function drawScore() {
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText(`Score: ${score}`, 10, 20);
+  }
+
+  // Game logic
+  function update() {
+    // Handle jumping
+    if (dino.jumping) {
+      dino.y -= dino.jumpVelocity;
+      dino.jumpVelocity -= dino.gravity;
+      if (dino.y >= 150) {
+        dino.jumping = false;
+        dino.y = 150;
+        dino.jumpVelocity = 0;
+      }
+    }
+
+    // Move obstacles
+    for (const obstacle of obstacles) {
+      obstacle.x -= gameSpeed;
+      if (obstacle.x + obstacle.width < 0) {
+        obstacles.shift();
+        score++;
+      }
+    }
+
+    // Check for collisions
+    for (const obstacle of obstacles) {
+      if (
+        dino.x + dino.width >= obstacle.x &&
+        dino.x <= obstacle.x + obstacle.width &&
+        dino.y + dino.height >= obstacle.y
+      ) {
+        // Game over
+        alert(`Game Over! Score: ${score}`);
+        break;
+      }
+    }
+
+    // Spawn new obstacles
+    if (Math.random() < 0.01) {
+      obstacles.push({
+        x: canvas.width,
+        y: 130,
+        width: 20,
+        height: 20,
+      });
+    }
+
+    // Update current sprite based on dino state
+    if (dino.jumping) {
+      dino.currentSprite = "jumping";
+    } else if (dino.x > 0) {
+      dino.currentSprite = "running";
+    } else {
+      dino.currentSprite = "idle";
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Add background drawing here (consider hills, clouds, etc.)
+    drawDino();
+    drawObstacles();
+    drawScore();
+</script>
+</body>
+</html>

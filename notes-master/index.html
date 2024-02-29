@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="stylesheet" href="style2.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
 <style>
     :root {
@@ -92,22 +92,15 @@ body {
 
 .switch:checked+label:after {
     transform: translateX(30px);
-    
 }
 
-    button {
-      background-color: #1C2833;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-    }
 
 </style>
     <body>
+        <body onload="setUsername()">
         <div class="container" id="header">
-            <button onclick="location.href='index.html'" id="myButton121">Go Home</button>
-            <h1 style="color: rgb(162, 240, 255); margin: 20px; margin: auto; margin-left: 25%;" id="welcometonotes">Welcome To Notes</h1>
-             
+            
+            <h1 style="color: rgb(162, 240, 255); margin: 10px; margin: auto;" id="welcometonotes">Welcome To Notes</h1>
         </div>
 
         <div class="container my-3">

@@ -113,8 +113,27 @@
         font-weight: bold;
         margin-left: 10px;
       }
+      .center-fit {
+        width: 100%; /* Image spans the full width of the button */
+        height: 100%; /* Image spans the full height of the button */
+        object-fit: cover; /* Maintain aspect ratio and resize to cover the area */
+      }
+
+      .centered-text {
+        position: absolute; /* Position text absolutely within the button */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center text horizontally and vertically */
+        text-align: center; /* Ensure horizontal centering of text */
+        white-space: nowrap; /* Prevent text wrapping initially */
+        overflow: hidden; /* Clip overflowing text ellipsis */
+        text-overflow: ellipsis; /* Add ellipsis if text overflows */
+        width: 100%; /* Expand text width to fill the button area */
+        font-size: calc(1em + 0.5vw); /* Adjust font size based on viewport width */
+        line-height: 1.2; /* Increase line height for readability */
+      }
   </style>
-        <div class="button-container" id="bookmarks">
+        <div class="button-container" id="circular-buttons">
 	<a href="coin_flip.html">
 		<div class="circular-button">
 			<img src="Untitled design (3).png" alt="Image 1">
@@ -147,12 +166,97 @@
              <img src="Screenshot 2024-02-06 10.51.48 AM.png" alt="Image 3">
           </div>
             </a>
+                <a href="notes.html">
+                  <div class="circular-button">
+                     <img src="news.png" alt="Image 3">
+                  </div>
+                    </a>
+                <a href="chess.html">
+                  <div class="circular-button">
+                     <img src="chess.PNG" alt="Image 3">
+                  </div>
+                    </a>
+                <a id="plus" href="#" onclick="showForm()">
+                  <div class="circular-button">
+                     <img src="plus.PNG" alt="Image 3">
+                  </div>
+                    </a>
+          <a href="Snake.html">
+            <div class="circular-button">
+               <img src="Snake_Game.png" alt="Image 3" >
+            </div>
+              </a>
 
             
 
         </div>
-
     
+
+
+
+    <form id="addButtonForm">
+      <label for="buttonText">Button Text:</label>
+      <input type="text" id="buttonText" required>
+      <label for="buttonLink">Button Link:</label>
+      <input type="url" id="buttonLink" required>
+      <label for="buttonColor">Button Color:</label>
+      <input type="color" id="buttonColor">
+      <button type="submit" id="addButtonForm">Create Button</button>
+      <button class="close-button" onclick="hideForm()">Close</button>
+    </form>
+
+
+    <script>
+        
+          const form = document.getElementById('addButtonForm');
+          const buttonContainer = document.getElementById('circular-buttons');
+          const closebutton = document.getElementById('closebutton');
+          const plus = document.getElementById('plus');
+
+           form.style.display = 'none';
+          
+
+  function showForm() {
+
+    form.style.display = 'block';
+  }
+          function hideForm() {
+
+            form.style.display = 'none';
+          }
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const text = document.getElementById('buttonText').value;
+            const link = document.getElementById('buttonLink').value;
+            const color = document.getElementById('buttonColor').value || 'lightgray';
+
+            // Check for duplicate buttons
+            if (existingButtons.find(button => button.text === text || button.link === link)) {
+              alert('Button already exists!');
+              return;
+            }
+
+            // Create the button element
+            const button = document.createElement('a');
+            button.textContent = text;
+            button.innerHTML = `<a href="${link}" style="background-color: ${color}">
+  <div class="circular-button">
+    <img src="globe.PNG" alt="Image 3" class="circular-image">
+    <h1 class="centered-text">${text}</h1>
+                
+  </div>
+</a>
+`;
+
+            // Add the button to the container and update existing buttons
+            buttonContainer.appendChild(button);
+            existingButtons.push({ text, link, color });
+
+            // Clear the form fields
+            form.reset();
+          });
+    </script>
 
   <script type="text/javascript" src="script.js"></script>
 </body>

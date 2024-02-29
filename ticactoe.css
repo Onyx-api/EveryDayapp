@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  background-color: #fefe71;
+  font-family: 'Lucida Sans';
+  font-size: 0;
+  min-width: 335px;
+  font-weight: bold;
+}
+.letterbox {
+  display: inline-block;
+  background-color: white;
+  vertical-align: middle;
+  opacity: 90%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin: 3px; 
+  font-size: 50px;
+}
+#outcome {
+  font-size: 30px;
+}

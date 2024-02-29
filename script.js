@@ -60,7 +60,9 @@ setTimeout(() => {
   }, 1000); // Adjust delay based on animation duration (2s for expand + desired hiding delay)
 }, 2000);
 const usernameSpan = document.getElementById('username');
+const welcometonotes = document.getElementById('welcometonotes');
 const usernameInput = document.getElementById('username-input');
+
 
 // Check if the username is stored in localStorage
 let username = localStorage.getItem('username');
@@ -95,6 +97,7 @@ function setUsername() {
   usernameInput.style.display = 'none';
   nameinput.style.display = 'none';
 }
+
 
 
 

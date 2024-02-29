@@ -1,4 +1,4 @@
-const apiKey = "eef64d8169f7411196eb994d325c6f6f"; // Replace with your actual API key
+const apiKey = "YOUR_NEWS_API_KEY"; // Replace with your actual API key
 const newsContainer = document.getElementById("news-container");
 
 const fetchNews = async () => {
